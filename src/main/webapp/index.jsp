@@ -512,6 +512,196 @@
         }
     </style>
    
+
+<style id="realistic-ui-overrides">
+:root{
+  --bg:#f7f7f8;
+  --surface:#ffffff;
+  --surface-2:#f1f3f5;
+  --text:#17181a;
+  --muted:#6f7378;
+  --primary:#111315;
+  --accent:#ff4d2d;
+  --accent-2:#ff6a3d;
+  --line:#e6e7e9;
+  --shadow:0 10px 30px rgba(20,25,30,.07);
+  --shadow-hover:0 18px 45px rgba(20,25,30,.13);
+  --radius:18px;
+  --container:1280px;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+header{
+  background:rgba(255,255,255,.92);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(14px);
+}
+
+.header-inner{padding:12px 0}
+.brand{color:var(--text);font-size:22px}
+.brand .accent{color:var(--accent)}
+
+nav.main-nav li a{color:#444;padding:9px 11px}
+nav.main-nav li a:hover{background:#f3f4f5;color:var(--text)}
+
+.search{
+  background:#f3f4f6;
+  border:1px solid #eceef0;
+  min-width:300px;
+  padding:10px 14px;
+}
+.search:focus-within{background:#fff;border-color:#d8dadd;box-shadow:0 0 0 4px rgba(255,77,45,.08)}
+
+.icon-btn{color:#34373a}
+.cart{padding:9px 11px}
+.cart-count{background:var(--accent)}
+
+.hero{
+  position:relative;
+  min-height:560px;
+  border-radius:0;
+  margin:0;
+  text-align:left;
+  justify-content:flex-start;
+  overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(8,10,12,.78) 0%,rgba(8,10,12,.48) 42%,rgba(8,10,12,.05) 78%),
+    url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;
+}
+.hero .container{max-width:1280px}
+.hero h1{
+  max-width:650px;
+  font-size:58px;
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+.hero p{
+  max-width:580px;
+  font-size:17px;
+  line-height:1.7;
+  color:rgba(255,255,255,.84);
+}
+.btn{
+  padding:12px 20px;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(255,77,45,.24)}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-ghost{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+
+.section{padding:58px 0}
+.section .title{text-align:left;margin-bottom:24px}
+.section .title h2{font-size:30px;letter-spacing:-.025em;margin-bottom:6px}
+.muted{color:var(--muted)}
+
+.categories{grid-template-columns:repeat(6,1fr);gap:14px}
+.cat-card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px 14px;
+  box-shadow:none;
+  background:#fff;
+  cursor:pointer;
+}
+.cat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#ddd}
+.cat-card .icon{
+  width:54px;height:54px;margin:0 auto 12px;
+  display:grid;place-items:center;
+  border-radius:15px;
+  background:#f5f6f7;
+  color:var(--accent);
+  font-size:22px;
+}
+.cat-card h4{font-size:14px}
+
+.products{grid-template-columns:repeat(4,1fr);gap:20px}
+.product{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:none;
+  background:#fff;
+  overflow:hidden;
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.product:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.product img{
+  height:255px;
+  background:#f4f4f5;
+  object-fit:cover;
+  transition:transform .35s ease;
+}
+.product:hover img{transform:scale(1.035)}
+.product-body{padding:16px 16px 8px;gap:8px}
+.product h5{font-size:16px;color:#202224}
+.product-footer{padding:12px 16px 16px}
+.add-btn{background:#111315;border-radius:10px}
+.add-btn:hover{background:#292c30}
+.wish-btn{border-color:#ddd;border-radius:10px}
+.price{font-size:18px}
+.old-price{margin-top:2px}
+.rating{font-size:12px}
+
+.deal{
+  background:#111315;
+  color:#fff;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+.deal img{width:52%;height:360px}
+.deal .content{padding:40px}
+.deal .content .muted{color:#b9bec4}
+.time-box{background:#26292d;min-width:72px;border:1px solid #373b40}
+.deal .price{color:#fff}
+
+.testimonials{gap:18px}
+.testimonial{
+  min-width:340px;
+  border:1px solid var(--line);
+  box-shadow:none;
+}
+.newsletter{
+  border-radius:22px;
+  background:linear-gradient(135deg,#17191b,#292d31);
+  padding:42px;
+}
+.newsletter input{border:1px solid #ddd}
+
+footer{background:#fff;border-top:1px solid var(--line);margin-top:20px}
+
+@media(max-width:1200px){
+  .hero h1{font-size:48px}
+  .products{grid-template-columns:repeat(3,1fr)}
+  .categories{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  .search{min-width:180px}
+  .hero{min-height:500px}
+  .hero h1{font-size:42px}
+  .products{grid-template-columns:repeat(2,1fr)}
+  .categories{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .header-inner{gap:8px}
+  .search{min-width:0;flex:1}
+  .hero{min-height:540px;background-position:62% center}
+  .hero h1{font-size:36px}
+  .hero p{font-size:15px}
+  .products{grid-template-columns:1fr}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .deal{flex-direction:column}
+  .deal img{width:100%;height:250px}
+  .deal .content{padding:26px}
+  .newsletter{padding:28px 20px}
+}
+</style>
+
 </head>
 
 <body>
@@ -538,7 +728,7 @@
 
             <div style="display:flex;align-items:center;gap:14px;">
                 <div class="search" role="search" aria-label="Product search">
-                    <emnput type="search" id="searchInput" placeholder="Search products, categories..." aria-label="Search products" />
+                    <input type="search" id="searchInput" placeholder="Search products, categories..." aria-label="Search products" />
                     <button class="icon-btn" id="searchBtn" aria-label="Search"><em class="fas fa-search"></em></button>
                 </div>
 
@@ -573,8 +763,8 @@
         <!-- Hero -->
         <section class="hero" role="img" aria-label="Hero banner">
             <div class="container">
-                <h1>New Winter Collection  Premium Picks</h1>
-                <p>Discover the latest trends in fashion, technology and accessories — curated just for you. Enjoy limited-time deals and free shipping on selected items.</p>
+                <h1>Elevate your everyday with better picks.</h1>
+                <p>Discover thoughtfully selected fashion, tech and lifestyle essentials. Fast delivery, easy returns and member-only offers.</p>
                 <div>
                     <button class="btn btn-primary" id="shopNow">Shop Now <em class="fas fa-arrow-right"></em></button>
                     <button class="btn btn-ghost" id="exploreDeals">Explore Deals</button>
@@ -610,7 +800,7 @@
             </div>
 
             <div class="deal" style="align-items:stretch;">
-                <emmg src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80" alt="Deal product">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80" alt="Deal product">
                 <div class="content">
                     <h3>MacBook Air M2</h3>
                     <p class="muted">Thin, light and powerful — now with M2 performance.</p>
@@ -659,7 +849,7 @@
                     <div class="rating">★★★★★</div>
                     <p>"Fast shipping and excellent customer support. The product exceeded my expectations!"</p>
                     <div style="display:flex;align-items:center;gap:10px">
-                        <emmg src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
                         <div>
                             <div style="font-weight:700">Ava Martin</div>
                             <div class="muted" style="font-size:13px">Verified buyer</div>
@@ -671,7 +861,7 @@
                     <div class="rating">★★★★☆</div>
                     <p>"Great selection and the checkout was smooth. Will shop again."</p>
                     <div style="display:flex;align-items:center;gap:10px">
-                        <emmg src="https://images.unsplash.com/photo-1546456073-6712f79251bb?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+                        <img src="https://images.unsplash.com/photo-1546456073-6712f79251bb?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
                         <div>
                             <div style="font-weight:700">Michael Lee</div>
                             <div class="muted" style="font-size:13px">Frequent buyer</div>
@@ -687,7 +877,7 @@
                 <h3 id="news-title">Stay in the loop</h3>
                 <p>Subscribe to get exclusive offers & new arrivals</p>
                 <form id="newsletterForm" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;" onsubmit="return false;">
-                    <emnput id="newsletterEmail" type="email" placeholder="Enter your email" aria-label="Email address" required>
+                    <input id="newsletterEmail" type="email" placeholder="Enter your email" aria-label="Email address" required>
                     <button class="btn btn-primary" id="subscribeBtn">Subscribe</button>
                 </form>
                 <div id="newsletterMsg" style="margin-top:10px;font-size:14px;display:none"></div>
@@ -873,7 +1063,7 @@
                 el.className = 'product';
                 el.innerHTML = `
                     ${p.badge ? `<div style="position:absolute;margin:12px"><span style="background:${p.badge.startsWith('-')? '#ff4757' : 'var(--success)'};color:white;padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px">${p.badge}</span></div>` : ''}
-                    <emmg src="${p.img}" alt="${escapeHtml(p.title)}">
+                    <img src="${p.img}" alt="${escapeHtml(p.title)}">
                     <div class="product-body">
                         <h5>${escapeHtml(p.title)}</h5>
                         <div class="muted">${p.category}</div>
@@ -1027,6 +1217,36 @@
             document.getElementById('year').textContent = new Date().getFullYear();
         })();
     </script>
+
+<style>
+#toast{
+  position:fixed;right:22px;bottom:22px;z-index:100;
+  background:#17191b;color:#fff;padding:13px 17px;border-radius:12px;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);font-size:14px;
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:.25s ease;
+}
+#toast.show{opacity:1;transform:translateY(0)}
+</style>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  const toast=document.getElementById('toast');
+  window.showToast=function(message){
+    toast.textContent=message;
+    toast.classList.add('show');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer=setTimeout(()=>toast.classList.remove('show'),1800);
+  };
+  const originalAddToCart=window.addToCart;
+  window.addToCart=function(productId){
+    if(originalAddToCart) originalAddToCart(productId);
+    const p=(window.PRODUCTS||[]).find(x=>x.id===productId);
+    showToast((p?p.title:'Item')+' added to cart');
+  };
+})();
+</script>
+
 </body>
 
 </html> 
